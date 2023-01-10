@@ -1,11 +1,11 @@
 import { getCSV } from "./getCSV";
 import csvtojson from "csvtojson";
-import type { OUIEntry } from "./types";
+import type { OUI28Entry } from "./types";
 
-export async function getEntries(): Promise<OUIEntry[]> {
+export async function getEntries(): Promise<OUI28Entry[]> {
   const csv = await getCSV();
 
-  const data: OUIEntry[] = await csvtojson().fromString(csv);
+  const data: OUI28Entry[] = await csvtojson().fromString(csv);
 
   return data;
 }
