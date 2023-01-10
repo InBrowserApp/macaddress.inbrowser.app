@@ -11,7 +11,7 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/oui/:prefix",
+      path: "/oui/:assignment",
       name: "oui",
       component: OUIView,
     },
