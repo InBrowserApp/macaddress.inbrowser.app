@@ -1,6 +1,6 @@
-export interface OUI36Entry {
+export interface MALEntry {
   Assignment: string;
   "Organization Address": string;
   "Organization Name": string;
-  Registry: "MA-S";
+  Registry: "MA-L";
 }

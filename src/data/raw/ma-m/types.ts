@@ -1,6 +1,6 @@
-export interface OUIEntry {
+export interface MAMEntry {
   Assignment: string;
   "Organization Address": string;
   "Organization Name": string;
-  Registry: "MA-L";
+  Registry: "MA-M";
 }

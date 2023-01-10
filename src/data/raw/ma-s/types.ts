@@ -1,6 +1,6 @@
-export interface OUI28Entry {
+export interface MASEntry {
   Assignment: string;
   "Organization Address": string;
   "Organization Name": string;
-  Registry: "MA-M";
+  Registry: "MA-S";
 }

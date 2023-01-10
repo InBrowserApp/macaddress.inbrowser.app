@@ -22,9 +22,9 @@
 
 <script setup lang="ts">
 import { NDescriptions, NDescriptionsItem } from "naive-ui";
-import type { OUIEntry } from "@/data/raw/oui";
-import type { OUI28Entry } from "@/data/raw/oui28";
-import type { OUI36Entry } from "@/data/raw/oui36";
+import type { MALEntry } from "@/data/raw/ma-l";
+import type { MAMEntry } from "@/data/raw/ma-m";
+import type { MASEntry } from "@/data/raw/ma-s";
 import type { CIDEntry } from "@/data/raw/cid";
 import type { IABEntry } from "@/data/raw/iab";
 
@@ -34,6 +34,6 @@ import OrganizationAddressDisplay from "./OrganizationAddressDisplay.vue";
 import RegistryType from "./RegistryType.vue";
 
 defineProps<{
-  entry: OUIEntry | OUI28Entry | OUI36Entry | CIDEntry | IABEntry;
+  entry: MALEntry | MAMEntry | MASEntry | CIDEntry | IABEntry;
 }>();
 </script>

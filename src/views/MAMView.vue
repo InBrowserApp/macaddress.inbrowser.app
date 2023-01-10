@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { NH1 } from "naive-ui";
-import { getEntryFromAssignment } from "@/data/raw/oui28";
+import { getEntryFromAssignment } from "@/data/raw/ma-m";
 import { useRouteParams } from "@vueuse/router";
 import { computedAsync } from "@vueuse/core";
 import EntryDisplay from "@/components/display/EntryDisplay.vue";
