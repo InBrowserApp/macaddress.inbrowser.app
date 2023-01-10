@@ -14,5 +14,10 @@ export async function searchAssignments(
   for (const provider of providers) {
     results.push(...(await provider.searchAssignment(assignment)));
   }
+
+  results.sort((a, b) => {
+    return a.Assignment.localeCompare(b.Assignment);
+  });
+
   return results;
 }
