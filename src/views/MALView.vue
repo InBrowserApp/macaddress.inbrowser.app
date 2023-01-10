@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { NH1 } from "naive-ui";
-import { MALDataProvider } from "@/data/ieee/ma-l";
+import { MALDataProvider } from "@/data/blocks/ma-l";
 import { useRouteParams } from "@vueuse/router";
 import { computedAsync } from "@vueuse/core";
 import EntryDisplay from "@/components/display/EntryDisplay.vue";

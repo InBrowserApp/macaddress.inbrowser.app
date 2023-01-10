@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { NH1 } from "naive-ui";
-import { CIDDataProvider } from "@/data/ieee/cid";
+import { CIDDataProvider } from "@/data/blocks/cid";
 import { useRouteParams } from "@vueuse/router";
 import { computedAsync } from "@vueuse/core";
 import EntryDisplay from "@/components/display/EntryDisplay.vue";

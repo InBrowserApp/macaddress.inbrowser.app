@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { NH1 } from "naive-ui";
-import { IABDataProvider } from "@/data/ieee/iab";
+import { IABDataProvider } from "@/data/blocks/iab";
 import { useRouteParams } from "@vueuse/router";
 import { computedAsync } from "@vueuse/core";
 import EntryDisplay from "@/components/display/EntryDisplay.vue";

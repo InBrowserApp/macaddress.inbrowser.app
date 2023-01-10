@@ -22,11 +22,11 @@
 
 <script setup lang="ts">
 import { NDescriptions, NDescriptionsItem } from "naive-ui";
-import type { MALEntry } from "@/data/ieee/ma-l";
-import type { MAMEntry } from "@/data/ieee/ma-m";
-import type { MASEntry } from "@/data/ieee/ma-s";
-import type { CIDEntry } from "@/data/ieee/cid";
-import type { IABEntry } from "@/data/ieee/iab";
+import type { MALEntry } from "@/data/blocks/ma-l";
+import type { MAMEntry } from "@/data/blocks/ma-m";
+import type { MASEntry } from "@/data/blocks/ma-s";
+import type { CIDEntry } from "@/data/blocks/cid";
+import type { IABEntry } from "@/data/blocks/iab";
 
 import AssignmentDisplay from "./AssignmentDisplay.vue";
 import OrganizationNameDisplay from "./OrganizationNameDisplay.vue";
