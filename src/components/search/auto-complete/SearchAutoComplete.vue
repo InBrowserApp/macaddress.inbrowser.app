@@ -55,6 +55,7 @@ const options = computed(() => {
 const renderLabel = (option: SelectOption) => {
   return h(EntrySearchResultEntry, {
     entry: option.entry as BlockEntryType,
+    query: query.value,
   });
 };
 

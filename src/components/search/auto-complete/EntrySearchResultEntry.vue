@@ -1,7 +1,10 @@
 <template>
   <a href="" @click.prevent class="search-entry-a">
     <n-space justify="space-between" style="width: 100%">
-      <span>{{ entry.Assignment }}</span>
+      <EntrySearchResultEntryAssignment
+        :query="query"
+        :assignment="entry.Assignment"
+      />
       <n-space>
         {{ entry.Registry }}
       </n-space>
@@ -12,9 +15,11 @@
 <script setup lang="ts">
 import { NSpace } from "naive-ui";
 import type { BlockEntryType } from "@/data/blocks";
+import EntrySearchResultEntryAssignment from "./EntrySearchResultEntryAssignment.vue";
 
 defineProps<{
   entry: BlockEntryType;
+  query: string;
 }>();
 </script>
 
