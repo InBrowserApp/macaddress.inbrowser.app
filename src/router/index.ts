@@ -4,6 +4,7 @@ import OUIView from "../views/OUIView.vue";
 import OUI28View from "../views/OUI28View.vue";
 import OUI36View from "../views/OUI36View.vue";
 import CIDView from "../views/CIDView.vue";
+import IABView from "../views/IABView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: "/cid/:assignment",
       name: "cid",
       component: CIDView,
+    },
+    {
+      path: "/iab/:assignment",
+      name: "iab",
+      component: IABView,
     },
   ],
 });
