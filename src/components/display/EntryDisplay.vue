@@ -25,6 +25,7 @@ import { NDescriptions, NDescriptionsItem } from "naive-ui";
 import type { OUIEntry } from "@/data/raw/oui";
 import type { OUI28Entry } from "@/data/raw/oui28";
 import type { OUI36Entry } from "@/data/raw/oui36";
+import type { CIDEntry } from "@/data/raw/cid";
 
 import AssignmentDisplay from "./AssignmentDisplay.vue";
 import OrganizationNameDisplay from "./OrganizationNameDisplay.vue";
@@ -32,6 +33,6 @@ import OrganizationAddressDisplay from "./OrganizationAddressDisplay.vue";
 import RegistryType from "./RegistryType.vue";
 
 defineProps<{
-  entry: OUIEntry | OUI28Entry | OUI36Entry;
+  entry: OUIEntry | OUI28Entry | OUI36Entry | CIDEntry;
 }>();
 </script>

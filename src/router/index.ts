@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import OUIView from "../views/OUIView.vue";
 import OUI28View from "../views/OUI28View.vue";
 import OUI36View from "../views/OUI36View.vue";
+import CIDView from "../views/CIDView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: "/oui36/:assignment",
       name: "oui36",
       component: OUI36View,
+    },
+    {
+      path: "/cid/:assignment",
+      name: "cid",
+      component: CIDView,
     },
   ],
 });
