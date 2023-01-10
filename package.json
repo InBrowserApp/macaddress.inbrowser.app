@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
+    "@types/csvtojson": "^2.0.0",
     "@types/jsdom": "^20.0.1",
     "@types/node": "^18.11.12",
     "@vicons/antd": "^0.12.0",
@@ -32,6 +33,7 @@
     "@vue/eslint-config-typescript": "^11.0.0",
     "@vue/test-utils": "^2.2.6",
     "@vue/tsconfig": "^0.1.3",
+    "csvtojson": "^2.0.10",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
     "jsdom": "^20.0.3",
