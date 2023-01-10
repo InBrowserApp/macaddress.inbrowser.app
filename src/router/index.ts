@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import OUIView from "../views/OUIView.vue";
 import OUI28View from "../views/OUI28View.vue";
+import OUI36View from "../views/OUI36View.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +21,11 @@ const router = createRouter({
       path: "/oui28/:assignment",
       name: "oui28",
       component: OUI28View,
+    },
+    {
+      path: "/oui36/:assignment",
+      name: "oui36",
+      component: OUI36View,
     },
   ],
 });
