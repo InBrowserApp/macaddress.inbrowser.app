@@ -2,5 +2,5 @@ export interface OUIEntry {
   Assignment: string;
   "Organization Address": string;
   "Organization Name": string;
-  Registry: string;
+  Registry: "MA-L";
 }
