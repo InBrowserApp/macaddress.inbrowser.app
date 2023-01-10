@@ -9,18 +9,15 @@
 
 <script setup lang="ts">
 import { NText } from "naive-ui";
-import { computed } from "vue";
+import { computed, toRef } from "vue";
+import { useAssignmentFormat } from "@/utils/assignment/useAssignmentFormat";
 
 const props = defineProps<{
   assignment: string;
 }>();
 
 // slice by two character and add ":"
-const assignmentFormat = computed(() => {
-  const text = props.assignment.replace(/(.{2})/g, "$1:");
-  // if text last character is ":", remove it
-  return text.slice(-1) === ":" ? text.slice(0, -1) : text;
-});
+const { assignmentFormat } = useAssignmentFormat(toRef(props, "assignment"));
 
 // suffix with :XX:XX:XX
 const assignmentSuffix = computed(() => {
