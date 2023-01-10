@@ -25,6 +25,7 @@ import EntrySearchResultEntry from "./EntrySearchResultEntry.vue";
 import { useRouter } from "vue-router";
 import type { SearchConfig } from "../SearchConfig";
 import { searchAssignments, type BlockEntryType } from "@/data/blocks";
+import { normalizeAssignment } from "@/utils/assignment/normalizeAssignment";
 
 const props = defineProps<{
   config: SearchConfig;
@@ -33,12 +34,15 @@ const props = defineProps<{
 const searchInput = ref<InstanceType<typeof NAutoComplete> | null>(null);
 const router = useRouter();
 const query = ref("");
+
+const normalizedQuery = computed(() => normalizeAssignment(query.value));
+
 const searchResults = computedAsync(async () => {
   if (query.value === "") {
     return [];
   }
 
-  const results = await searchAssignments(query.value, props.config);
+  const results = await searchAssignments(normalizedQuery.value, props.config);
   return results;
 }, []);
 
@@ -55,7 +59,7 @@ const options = computed(() => {
 const renderLabel = (option: SelectOption) => {
   return h(EntrySearchResultEntry, {
     entry: option.entry as BlockEntryType,
-    query: query.value,
+    query: normalizedQuery.value,
   });
 };
 
