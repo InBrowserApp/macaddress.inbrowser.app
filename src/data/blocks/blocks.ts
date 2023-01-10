@@ -15,3 +15,5 @@ export type BlockEntryTypeMap = {
   MAM: MAMEntry;
   MAS: MASEntry;
 };
+
+export type BlockEntryType = BlockEntryTypeMap[Block];
