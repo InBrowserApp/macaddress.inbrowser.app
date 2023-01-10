@@ -38,7 +38,7 @@ const query = ref("");
 const normalizedQuery = computed(() => normalizeAssignment(query.value));
 
 const searchResults = computedAsync(async () => {
-  if (query.value === "") {
+  if (normalizedQuery.value === "") {
     return [];
   }
 
@@ -50,7 +50,7 @@ const options = computed(() => {
   return searchResults.value.map((entry) => {
     return {
       label: entry.Assignment,
-      value: entry.Assignment,
+      value: "/" + entry.Registry + "/" + entry.Assignment,
       entry: entry,
     };
   });
