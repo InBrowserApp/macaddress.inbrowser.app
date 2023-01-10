@@ -7,3 +7,5 @@ export { MALDataProvider, type MALEntry } from "./ma-l";
 export { MAMDataProvider, type MAMEntry } from "./ma-m";
 
 export { MASDataProvider, type MASEntry } from "./ma-s";
+
+export { dataProviders } from "./dataProviders";
