@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { NH1 } from "naive-ui";
-import { getEntryFromAssignment } from "@/data/raw/ma-s";
+import { MASDataProvider } from "@/data/raw/ma-s";
 import { useRouteParams } from "@vueuse/router";
 import { computedAsync } from "@vueuse/core";
 import EntryDisplay from "@/components/display/EntryDisplay.vue";
@@ -19,7 +19,7 @@ import { useAssignmentFormat } from "@/utils/assignment/useAssignmentFormat";
 
 const assignment = useRouteParams<string>("assignment");
 const entry = computedAsync(async () => {
-  return await getEntryFromAssignment(assignment.value);
+  return await MASDataProvider.getEntryFromAssignment(assignment.value);
 });
 const { assignmentFormat } = useAssignmentFormat(assignment);
 </script>
