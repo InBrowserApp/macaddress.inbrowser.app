@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { NH1 } from "naive-ui";
-import { MASDataProvider } from "@/data/raw/ma-s";
+import { MASDataProvider } from "@/data/ieee/ma-s";
 import { useRouteParams } from "@vueuse/router";
 import { computedAsync } from "@vueuse/core";
 import EntryDisplay from "@/components/display/EntryDisplay.vue";
