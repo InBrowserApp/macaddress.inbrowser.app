@@ -35,4 +35,19 @@ export class DataProvider<
 
     return entry;
   }
+
+  async searchAssignment(assignment: string): Promise<T[]> {
+    const data = await this.getEntries();
+    const entries = data.filter((entry) => {
+      const Assignment = entry.Assignment;
+      if (
+        Assignment.startsWith(assignment) ||
+        assignment.startsWith(Assignment)
+      ) {
+        return true;
+      }
+      return false;
+    });
+    return entries;
+  }
 }
