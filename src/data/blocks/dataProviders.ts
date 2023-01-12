@@ -7,7 +7,7 @@ import { MASDataProvider } from "./ma-s";
 export const dataProviders = {
   CID: CIDDataProvider,
   IAB: IABDataProvider,
-  MAL: MALDataProvider,
-  MAM: MAMDataProvider,
-  MAS: MASDataProvider,
+  "MA-L": MALDataProvider,
+  "MA-M": MAMDataProvider,
+  "MA-S": MASDataProvider,
 } as const;

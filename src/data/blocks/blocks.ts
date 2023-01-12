@@ -4,16 +4,16 @@ import type { MALEntry } from "./ma-l";
 import type { MAMEntry } from "./ma-m";
 import type { MASEntry } from "./ma-s";
 
-export const blocks = ["CID", "IAB", "MAL", "MAM", "MAS"] as const;
+export const blocks = ["CID", "IAB", "MA-L", "MA-M", "MA-S"] as const;
 
 export type Block = (typeof blocks)[number];
 
 export type BlockEntryTypeMap = {
   CID: CIDEntry;
   IAB: IABEntry;
-  MAL: MALEntry;
-  MAM: MAMEntry;
-  MAS: MASEntry;
+  "MA-L": MALEntry;
+  "MA-M": MAMEntry;
+  "MA-S": MASEntry;
 };
 
 export type BlockEntryType = BlockEntryTypeMap[Block];

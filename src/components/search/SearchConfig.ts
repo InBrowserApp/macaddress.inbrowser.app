@@ -1,9 +1,5 @@
+import type { Block } from "@/data/blocks";
+
 export type SearchConfig = {
-  blocks: {
-    MAL: boolean;
-    MAM: boolean;
-    MAS: boolean;
-    IAB: boolean;
-    CID: boolean;
-  };
+  blocks: Record<Block, boolean>;
 };
