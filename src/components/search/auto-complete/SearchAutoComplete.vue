@@ -13,6 +13,7 @@
     :menu-props="{ class: 'page-search-auto-complete-menu' }"
     @select="router.push"
     clear-after-select
+    placeholder="CC:80:37:33:5D:ED"
     ref="searchInput"
   />
 </template>
