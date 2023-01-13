@@ -1,7 +1,7 @@
 <template>
   <main>
     <n-h1 prefix="bar" align-text>
-      {{ assignmentFormat }} | Mac Address Block Small
+      {{ assignmentFormat }} | MAC Address Block Small
     </n-h1>
     <div v-if="entry">
       <EntryDisplay :entry="entry" />
