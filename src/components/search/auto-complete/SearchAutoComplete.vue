@@ -43,7 +43,8 @@ const searchResults = computedAsync(async () => {
   }
 
   const results = await searchAssignments(normalizedQuery.value, props.config);
-  return results;
+  const slicedResults = results.slice(0, 20);
+  return slicedResults;
 }, []);
 
 const options = computed(() => {
