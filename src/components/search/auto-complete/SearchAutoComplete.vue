@@ -7,6 +7,7 @@
       autocapitalize: 'off',
       spellcheck: 'false',
     }"
+    :loading="evaluating"
     :options="options"
     :render-label="renderLabel"
     :get-show="() => true"
@@ -35,18 +36,26 @@ const props = defineProps<{
 const searchInput = ref<InstanceType<typeof NAutoComplete> | null>(null);
 const router = useRouter();
 const query = ref("");
+const evaluating = ref(false);
 
 const normalizedQuery = computed(() => normalizeAssignment(query.value));
 
-const searchResults = computedAsync(async () => {
-  if (normalizedQuery.value === "") {
-    return [];
-  }
+const searchResults = computedAsync(
+  async () => {
+    if (normalizedQuery.value === "") {
+      return [];
+    }
 
-  const results = await searchAssignments(normalizedQuery.value, props.config);
-  const slicedResults = results.slice(0, 20);
-  return slicedResults;
-}, []);
+    const results = await searchAssignments(
+      normalizedQuery.value,
+      props.config
+    );
+    const slicedResults = results.slice(0, 20);
+    return slicedResults;
+  },
+  [],
+  evaluating
+);
 
 const options = computed(() => {
   return searchResults.value.map((entry) => {
