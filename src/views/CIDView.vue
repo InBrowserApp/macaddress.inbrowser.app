@@ -1,6 +1,8 @@
 <template>
   <main>
-    <n-h1 prefix="bar" align-text>{{ assignmentFormat }} | Company ID</n-h1>
+    <n-h1 prefix="bar" align-text>
+      <AssignmentHeading>{{ assignmentFormat }}</AssignmentHeading> | Company ID
+    </n-h1>
     <div v-if="entry">
       <EntryDisplay :entry="entry" />
     </div>
@@ -8,6 +10,7 @@
 </template>
 
 <script setup lang="ts">
+import AssignmentHeading from "@/components/display/AssignmentHeading.vue";
 import { NH1 } from "naive-ui";
 import { CIDDataProvider } from "@/data/blocks/cid";
 import { useRouteParams } from "@vueuse/router";

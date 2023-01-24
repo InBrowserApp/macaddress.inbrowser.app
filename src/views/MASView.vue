@@ -1,7 +1,8 @@
 <template>
   <main>
     <n-h1 prefix="bar" align-text>
-      {{ assignmentFormat }} | MAC Address Block Small
+      <AssignmentHeading>{{ assignmentFormat }}</AssignmentHeading> | MAC
+      Address Block Small
     </n-h1>
     <div v-if="entry">
       <EntryDisplay :entry="entry" />
@@ -10,6 +11,7 @@
 </template>
 
 <script setup lang="ts">
+import AssignmentHeading from "@/components/display/AssignmentHeading.vue";
 import { NH1 } from "naive-ui";
 import { MASDataProvider } from "@/data/blocks/ma-s";
 import { useRouteParams } from "@vueuse/router";
