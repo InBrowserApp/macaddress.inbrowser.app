@@ -13,12 +13,13 @@
 import { NButton, NIcon, NDropdown } from "naive-ui";
 import BlockOutlined from "@vicons/antd/BlockOutlined";
 import { useRouter } from "vue-router";
+import { blocks } from "@/data/blocks";
+import { getBlockFullName } from "@/utils/block";
 
 const router = useRouter();
-const blocks = ["MA-L", "MA-M", "MA-S", "CID", "IAB"];
 
 const options = blocks.map((block) => ({
-  label: block,
+  label: `${getBlockFullName(block)} (${block})`,
   key: block,
 }));
 
