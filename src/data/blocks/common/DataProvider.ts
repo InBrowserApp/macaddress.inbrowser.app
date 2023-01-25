@@ -3,6 +3,7 @@ import csvtojson from "csvtojson";
 export class DataProvider<
   T extends {
     Assignment: string;
+    "Organization Name": string;
   }
 > {
   readonly csvPath: string;
@@ -44,6 +45,19 @@ export class DataProvider<
         Assignment.startsWith(assignment) ||
         assignment.startsWith(Assignment)
       ) {
+        return true;
+      }
+      return false;
+    });
+    return entries;
+  }
+
+  async searchOrganization(organization_: string): Promise<T[]> {
+    const organization = organization_.toLowerCase();
+    const data = await this.getEntries();
+    const entries = data.filter((entry) => {
+      const Organization = entry["Organization Name"].toLowerCase();
+      if (Organization == organization) {
         return true;
       }
       return false;

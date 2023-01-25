@@ -16,4 +16,4 @@ export {
   type BlockEntryType,
 } from "./blocks";
 
-export { searchAssignments } from "./search";
+export { searchAssignments, searchOrganization } from "./search";
