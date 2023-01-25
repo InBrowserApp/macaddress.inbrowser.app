@@ -1,6 +1,6 @@
 <template>
   <main>
-    <n-h1 prefix="bar" align-text>Browse By Organization Name</n-h1>
+    <n-h1 prefix="bar" align-text>Browse By Organizations</n-h1>
     <n-p>
       <n-list>
         <n-list-item
