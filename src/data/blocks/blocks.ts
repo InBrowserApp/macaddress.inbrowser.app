@@ -4,7 +4,7 @@ import type { MALEntry } from "./ma-l";
 import type { MAMEntry } from "./ma-m";
 import type { MASEntry } from "./ma-s";
 
-export const blocks = ["CID", "IAB", "MA-L", "MA-M", "MA-S"] as const;
+export const blocks = ["MA-L", "MA-M", "MA-S", "IAB", "CID"] as const;
 
 export type Block = (typeof blocks)[number];
 
