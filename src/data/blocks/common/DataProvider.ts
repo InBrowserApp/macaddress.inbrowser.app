@@ -64,4 +64,13 @@ export class DataProvider<
     });
     return entries;
   }
+
+  async getOrganizations(): Promise<Set<string>> {
+    const data = await this.getEntries();
+    const organizations = new Set<string>();
+    data.forEach((entry) => {
+      organizations.add(entry["Organization Name"]);
+    });
+    return organizations;
+  }
 }

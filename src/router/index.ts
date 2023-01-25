@@ -6,6 +6,7 @@ import MASView from "../views/MASView.vue";
 import CIDView from "../views/CIDView.vue";
 import IABView from "../views/IABView.vue";
 import OrganizationView from "../views/OrganizationView.vue";
+import OrganizationsView from "../views/OrganizationsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
       path: "/organizations/:organization",
       name: "organization",
       component: OrganizationView,
+    },
+    {
+      path: "/organizations",
+      name: "organizations",
+      component: OrganizationsView,
     },
   ],
 });
