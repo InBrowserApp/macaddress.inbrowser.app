@@ -6,12 +6,17 @@
         <n-skeleton text style="width: 3em" v-else />
       </n-statistic>
     </n-grid-item>
+    <n-grid-item>
+      <n-statistic label="Blocks">
+        <span>{{ Object.keys(dataProviders).length }}</span>
+      </n-statistic>
+    </n-grid-item>
   </n-grid>
 </template>
 
 <script setup lang="ts">
 import { NSkeleton, NStatistic, NGrid, NGridItem } from "naive-ui";
-import { getWholeLength } from "@/data/blocks";
+import { getWholeLength, dataProviders } from "@/data/blocks";
 import { computedAsync } from "@vueuse/core";
 
 const pageCount = computedAsync(getWholeLength, undefined);
