@@ -21,3 +21,5 @@ export {
   searchOrganization,
   getOrganizations,
 } from "./search";
+
+export { getWholeLength } from "./misc";

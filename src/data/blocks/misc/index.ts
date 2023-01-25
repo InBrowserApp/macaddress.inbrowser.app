@@ -1,0 +1,1 @@
+export { getWholeLength } from "./getWholeLength";

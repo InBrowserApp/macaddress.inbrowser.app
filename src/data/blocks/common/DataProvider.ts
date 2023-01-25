@@ -73,4 +73,9 @@ export class DataProvider<
     });
     return organizations;
   }
+
+  async getLength(): Promise<number> {
+    const data = await this.getEntries();
+    return data.length;
+  }
 }
