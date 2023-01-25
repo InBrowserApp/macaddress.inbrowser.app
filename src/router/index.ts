@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AssignmentView from "../views/AssignmentView.vue";
+import BlockView from "../views/BlockView.vue";
 import OrganizationView from "../views/OrganizationView.vue";
 import OrganizationsView from "../views/OrganizationsView.vue";
 
@@ -36,6 +37,31 @@ const router = createRouter({
       path: "/IAB/:assignment",
       name: "assignment:IAB",
       component: AssignmentView,
+    },
+    {
+      path: "/MA-L",
+      name: "block:MA-L",
+      component: BlockView,
+    },
+    {
+      path: "/MA-M",
+      name: "block:MA-M",
+      component: BlockView,
+    },
+    {
+      path: "/MA-S",
+      name: "block:MA-S",
+      component: BlockView,
+    },
+    {
+      path: "/CID",
+      name: "block:CID",
+      component: BlockView,
+    },
+    {
+      path: "/IAB",
+      name: "block:IAB",
+      component: BlockView,
     },
     {
       path: "/organizations/:organization",
