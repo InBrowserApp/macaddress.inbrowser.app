@@ -22,4 +22,22 @@ import EntrySearch from "@/components/search/auto-complete/EntrySearch.vue";
 import BrowseOrganizations from "@/components/misc/BrowseOrganizations.vue";
 import BrowseBlocks from "@/components/misc/BrowseBlocks.vue";
 import DataStatistics from "@/components/misc/DataStatistics.vue";
+import { useHead } from "@vueuse/head";
+
+useHead({
+  title: "MAC Address InBrowser.App",
+  meta: [
+    {
+      name: "description",
+      content:
+        "MAC Address InBrowser.App is an offline-capable PWA for MAC Address. Fully runs in your browser. Zero API latency.",
+    },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://macaddress.inbrowser.app/`,
+    },
+  ],
+});
 </script>
