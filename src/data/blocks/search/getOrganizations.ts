@@ -11,6 +11,11 @@ export async function getOrganizations(config: {
   for (const provider of providers) {
     const subOrganizationsSet = await provider.getOrganizations();
     subOrganizationsSet.forEach((subOrganization) => {
+      // FIXME
+      if (subOrganization === "??????????") {
+        return;
+      }
+
       resultsSet.add(subOrganization);
     });
   }
