@@ -8,7 +8,7 @@ export async function getOrganizations(config: {
 
   const resultsSet: Set<string> = new Set();
 
-  for (const provider of providers) {
+  const subOrganizationsSetPromises = providers.map(async (provider) => {
     const subOrganizationsSet = await provider.getOrganizations();
     subOrganizationsSet.forEach((subOrganization) => {
       // FIXME
@@ -18,7 +18,10 @@ export async function getOrganizations(config: {
 
       resultsSet.add(subOrganization);
     });
-  }
+    return;
+  });
+
+  await Promise.all(subOrganizationsSetPromises);
 
   const results = Array.from(resultsSet);
   results.sort((a, b) => {

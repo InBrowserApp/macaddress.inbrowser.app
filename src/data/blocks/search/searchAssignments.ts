@@ -11,9 +11,13 @@ export async function searchAssignments(
 
   const results: BlockEntryType[] = [];
 
-  for (const provider of providers) {
-    results.push(...(await provider.searchAssignment(assignment)));
-  }
+  const subResultsPromises = providers.map(async (provider) => {
+    const subResult = await provider.searchAssignment(assignment);
+    results.push(...subResult);
+    return;
+  });
+
+  await Promise.all(subResultsPromises);
 
   results.sort((a, b) => {
     return a.Assignment.localeCompare(b.Assignment);

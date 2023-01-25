@@ -11,9 +11,13 @@ export async function searchOrganization(
 
   const results: BlockEntryType[] = [];
 
-  for (const provider of providers) {
-    results.push(...(await provider.searchOrganization(organization)));
-  }
+  const subResultsPromises = providers.map(async (provider) => {
+    const subResult = await provider.searchOrganization(organization);
+    results.push(...subResult);
+    return;
+  });
+
+  await Promise.all(subResultsPromises);
 
   results.sort((a, b) => {
     return a.Assignment.localeCompare(b.Assignment);
