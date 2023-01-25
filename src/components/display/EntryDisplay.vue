@@ -9,7 +9,12 @@
       <AssignmentDisplay :assignment="entry.Assignment" />
     </n-descriptions-item>
     <n-descriptions-item label="Organization Name">
-      <OrganizationNameDisplay :name="entry['Organization Name']" />
+      <RouterLink
+        :to="`/organizations/${entry['Organization Name']}`"
+        class="organization-link"
+      >
+        <OrganizationNameDisplay :name="entry['Organization Name']" />
+      </RouterLink>
     </n-descriptions-item>
     <n-descriptions-item label="Organization Address">
       <OrganizationAddressDisplay :address="entry['Organization Address']" />
@@ -37,3 +42,14 @@ defineProps<{
   entry: MALEntry | MAMEntry | MASEntry | CIDEntry | IABEntry;
 }>();
 </script>
+
+<style scoped>
+.organization-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.organization-link:hover {
+  text-decoration: underline;
+}
+</style>
