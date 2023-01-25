@@ -1,7 +1,7 @@
 <template>
   <main>
     <n-h1 prefix="bar" align-text>
-      {{ block }}
+      {{ getBlockFullName(block) }} ({{ block }})
     </n-h1>
     <n-p>
       <n-list>
@@ -9,14 +9,6 @@
           v-for="assignment in assignmentsDisplay"
           :key="assignment.Assignment"
         >
-          <template #suffix>
-            <RegistryTag
-              type="success"
-              size="small"
-              :registry="assignment.Registry"
-              round
-            />
-          </template>
           <div>
             <div>
               <RouterLink
@@ -44,8 +36,8 @@ import { dataProviders, type Block } from "@/data/blocks";
 import { computedAsync } from "@vueuse/core";
 import { useRoute } from "vue-router";
 import AssignmentDisplay from "@/components/display/AssignmentDisplay.vue";
-import RegistryTag from "@/components/display/RegistryTag.vue";
 import { NH1, NList, NP, NListItem, NPagination, NSpace } from "naive-ui";
+import { getBlockFullName } from "@/utils/block";
 
 const route = useRoute();
 const block = computed(() => {

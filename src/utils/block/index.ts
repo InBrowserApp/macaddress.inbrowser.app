@@ -1,0 +1,1 @@
+export { getBlockFullName } from "./getBlockFullName";
