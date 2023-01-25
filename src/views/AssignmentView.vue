@@ -1,8 +1,7 @@
 <template>
   <main>
     <n-h1 prefix="bar" align-text>
-      <AssignmentHeading>{{ assignmentFormat }}</AssignmentHeading> |
-      {{ block }}
+      <AssignmentHeading>{{ assignmentFormat }}</AssignmentHeading>
     </n-h1>
     <div v-if="entry">
       <EntryDisplay :entry="entry" />
@@ -20,6 +19,7 @@ import { computedAsync } from "@vueuse/core";
 import EntryDisplay from "@/components/display/EntryDisplay.vue";
 import { useAssignmentFormat } from "@/utils/assignment/useAssignmentFormat";
 import { useRoute } from "vue-router";
+import { useHead } from "@vueuse/head";
 
 const route = useRoute();
 const block = computed(() => {
@@ -36,4 +36,29 @@ const entry = computedAsync(async () => {
   return await dataProvider.value.getEntryFromAssignment(assignment.value);
 });
 const { assignmentFormat } = useAssignmentFormat(assignment);
+
+const ownedByDescription = computed(() => {
+  if (entry.value) {
+    return ` owned by ${entry.value["Organization Name"]}`;
+  }
+  return "";
+});
+
+useHead(
+  computed(() => ({
+    title: `${assignmentFormat.value} | MAC Address InBrowser.App`,
+    meta: [
+      {
+        name: "description",
+        content: `MAC address prefix ${assignmentFormat.value}${ownedByDescription.value}.`,
+      },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: `https://macaddress.inbrowser.app${route.path}`,
+      },
+    ],
+  }))
+);
 </script>

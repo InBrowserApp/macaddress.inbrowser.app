@@ -38,6 +38,7 @@ import { useRoute } from "vue-router";
 import AssignmentDisplay from "@/components/display/AssignmentDisplay.vue";
 import { NH1, NList, NP, NListItem, NPagination, NSpace } from "naive-ui";
 import { getBlockFullName } from "@/utils/block";
+import { useHead } from "@vueuse/head";
 
 const route = useRoute();
 const block = computed(() => {
@@ -66,4 +67,24 @@ const assignmentsDisplay = computed(() =>
     pageNum.value * pageSize.value
   )
 );
+
+const blockFullName = computed(() => {
+  return `${getBlockFullName(block.value)} (${block.value})`;
+});
+
+useHead({
+  title: `${blockFullName.value} | MAC Address InBrowser.App`,
+  meta: [
+    {
+      name: "description",
+      content: `Browse MAC Address under ${blockFullName.value}.`,
+    },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://macaddress.inbrowser.app${route.path}`,
+    },
+  ],
+});
 </script>

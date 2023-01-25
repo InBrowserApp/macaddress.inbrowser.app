@@ -27,6 +27,8 @@ import { ref, computed } from "vue";
 import { NH1, NList, NP, NListItem, NPagination, NSpace } from "naive-ui";
 import { computedAsync } from "@vueuse/core";
 import { getOrganizations } from "@/data/blocks";
+import { useHead } from "@vueuse/head";
+import { useRoute } from "vue-router";
 
 const pageNum = ref(1);
 const pageSize = ref(10);
@@ -52,6 +54,24 @@ const organizationsDisplay = computed(() =>
     pageNum.value * pageSize.value
   )
 );
+
+const route = useRoute();
+
+useHead({
+  title: `Browse By Organizations | MAC Address InBrowser.App`,
+  meta: [
+    {
+      name: "description",
+      content: `Browse MAC Address By Organizations.`,
+    },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://macaddress.inbrowser.app${route.path}`,
+    },
+  ],
+});
 </script>
 
 <style scoped>

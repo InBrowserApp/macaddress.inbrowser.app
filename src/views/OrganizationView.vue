@@ -37,6 +37,8 @@ import { computedAsync } from "@vueuse/core";
 import { searchOrganization } from "@/data/blocks";
 import AssignmentDisplay from "@/components/display/AssignmentDisplay.vue";
 import RegistryTag from "@/components/display/RegistryTag.vue";
+import { useHead } from "@vueuse/head";
+import { useRoute } from "vue-router";
 
 const pageNum = ref(1);
 const pageSize = ref(8);
@@ -63,4 +65,22 @@ const assignmentsDisplay = computed(() =>
     pageNum.value * pageSize.value
   )
 );
+
+const route = useRoute();
+
+useHead({
+  title: `${organization.value}'s MAC Addresses | MAC Address InBrowser.App`,
+  meta: [
+    {
+      name: "description",
+      content: `Browse MAC addresses registered by ${organization.value}.`,
+    },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://macaddress.inbrowser.app${route.path}`,
+    },
+  ],
+});
 </script>
