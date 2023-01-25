@@ -4,12 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check build-only",
+    "build": "npm run download && run-p type-check build-only",
     "preview": "vite preview",
     "test:unit": "vitest --environment jsdom --root src/",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "download:cid": "mkdir -p public/data/cid && wget https://standards-oui.ieee.org/cid/cid.csv -O public/data/cid/cid.csv",
+    "download:iab": "mkdir -p public/data/iab && wget https://standards-oui.ieee.org/iab/iab.csv -O public/data/iab/iab.csv",
+    "download:oui": "mkdir -p public/data/oui && wget https://standards-oui.ieee.org/oui/oui.csv -O public/data/oui/oui.csv",
+    "download:oui28": "mkdir -p public/data/oui28 && wget https://standards-oui.ieee.org/oui28/mam.csv -O public/data/oui28/mam.csv",
+    "download:oui36": "mkdir -p public/data/oui36 && wget https://standards-oui.ieee.org/oui36/oui36.csv -O public/data/oui36/oui36.csv",
+    "download": "run-p download:*"
   },
   "dependencies": {
     "vue": "^3.2.45",
