@@ -1,10 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import MALView from "../views/MALView.vue";
-import MAMView from "../views/MAMView.vue";
-import MASView from "../views/MASView.vue";
-import CIDView from "../views/CIDView.vue";
-import IABView from "../views/IABView.vue";
+import AssignmentView from "../views/AssignmentView.vue";
 import OrganizationView from "../views/OrganizationView.vue";
 import OrganizationsView from "../views/OrganizationsView.vue";
 
@@ -18,28 +14,28 @@ const router = createRouter({
     },
     {
       path: "/MA-L/:assignment",
-      name: "MA-L",
-      component: MALView,
+      name: "assignment:MA-L",
+      component: AssignmentView,
     },
     {
       path: "/MA-M/:assignment",
-      name: "MA-M",
-      component: MAMView,
+      name: "assignment:MA-M",
+      component: AssignmentView,
     },
     {
       path: "/MA-S/:assignment",
-      name: "MA-S",
-      component: MASView,
+      name: "assignment:MA-S",
+      component: AssignmentView,
     },
     {
       path: "/CID/:assignment",
-      name: "CID",
-      component: CIDView,
+      name: "assignment:CID",
+      component: AssignmentView,
     },
     {
       path: "/IAB/:assignment",
-      name: "IAB",
-      component: IABView,
+      name: "assignment:IAB",
+      component: AssignmentView,
     },
     {
       path: "/organizations/:organization",

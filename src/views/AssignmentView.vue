@@ -1,8 +1,8 @@
 <template>
   <main>
     <n-h1 prefix="bar" align-text>
-      <AssignmentHeading>{{ assignmentFormat }}</AssignmentHeading> | Individual
-      Address Block
+      <AssignmentHeading>{{ assignmentFormat }}</AssignmentHeading> |
+      {{ block }}
     </n-h1>
     <div v-if="entry">
       <EntryDisplay :entry="entry" />
@@ -11,17 +11,29 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
 import AssignmentHeading from "@/components/display/AssignmentHeading.vue";
 import { NH1 } from "naive-ui";
-import { IABDataProvider } from "@/data/blocks/iab";
+import { dataProviders, type Block } from "@/data/blocks";
 import { useRouteParams } from "@vueuse/router";
 import { computedAsync } from "@vueuse/core";
 import EntryDisplay from "@/components/display/EntryDisplay.vue";
 import { useAssignmentFormat } from "@/utils/assignment/useAssignmentFormat";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+const block = computed(() => {
+  const prefix = "assignment:";
+  const block = (route.name as string).slice(prefix.length) as Block;
+  return block;
+});
+const dataProvider = computed(() => {
+  return dataProviders[block.value];
+});
 
 const assignment = useRouteParams<string>("assignment");
 const entry = computedAsync(async () => {
-  return await IABDataProvider.getEntryFromAssignment(assignment.value);
+  return await dataProvider.value.getEntryFromAssignment(assignment.value);
 });
 const { assignmentFormat } = useAssignmentFormat(assignment);
 </script>
