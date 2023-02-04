@@ -11,6 +11,7 @@ export default defineConfig({
     VitePWA({
       includeAssets: [
         "favicon.ico",
+        "favicon-dark.ico",
         "favicon.svg",
         "apple-touch-icon.png",
         "masked-icon.svg",
