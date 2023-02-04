@@ -1,52 +1,27 @@
-# macaddress.inbrowser.app
+# 🌐 MAC Address InBrowser.App
 
-This template should help get you started developing with Vue 3 in Vite.
+https://macaddress.inbrowser.app
 
-## Recommended IDE Setup
+MAC Address InBrowser.App is an offline-capable PWA for MAC Address. Fully runs in your browser. Zero API latency.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## ✨ Features
 
-## Type Support for `.vue` Imports in TS
+* Autocomplete and search commands.
+* Browse by organizations and nlocks.
+* Everything is processed in your browser.
+* Works without a network connection using PWA.
+* All files are static. No backend servers are needed.
+* Zero API latency, no waiting for a response.
+* Automatically updates when new records are available.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## 🧑‍💻 Develop
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
 
 ```sh
-npm install
+$ npm run dev # Run Dev Server
+$ npm run build # Build to dist/
 ```
 
-### Compile and Hot-Reload for Development
+## 📝 License
 
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+MIT License
